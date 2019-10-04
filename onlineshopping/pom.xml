@@ -7,6 +7,9 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>onlineshopping Maven Webapp</name>
   <url>http://maven.apache.org</url>
+  
+
+  
   <properties>
   <javaee.version>7.0</javaee.version>
   <spring.version>4.3.6.RELEASE</spring.version>
@@ -15,6 +18,13 @@
 
   
   <dependencies>
+  
+  <dependency>
+   <groupId>net.sdm</groupId>
+  <artifactId>appbackend</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  </dependency>
+  
   <dependency>
     <groupId>javax</groupId>
     <artifactId>javaee-api</artifactId>

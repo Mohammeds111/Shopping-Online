@@ -32,21 +32,25 @@ $(function() {
 	case 'All Products':
 		$('#listProducts').addClass('active');
 		break;
-	case 'Product Management':
+	/*case 'Product Management':
 		$('#manageProduct').addClass('active');
 		break;
 	case 'Shopping Cart':
 		$('#userModel').addClass('active');
-		break;		
-	default:
-		if (menu == "Home")
-			break;
-		$('#listProducts').addClass('active');
-		$('#a_' + menu).addClass('active');
 		break;
+	case 'Shopping Cart':
+		$('#userModel').addClass('active');
+		break;*/	
+		default:
+			$('#a_'+menu).addClass('active');
+		break;
+	
+		
+		
+		
 	}
 
-	// code for jquery dataTable
+/*	// code for jquery dataTable
 	var $table = $('#productListTable');
 
 	// execute the below code only where we have this table
@@ -332,7 +336,7 @@ $(function() {
 		
 	}
 	
-	/*validating the loginform*/
+	validating the loginform
 	
 	// validating the product form element	
 	// fetch the form element
@@ -376,8 +380,8 @@ $(function() {
 		
 	
 	
-	/*------*/
-	/* for fading out the alert message after 3 seconds */
+	------
+	 for fading out the alert message after 3 seconds 
 	$alert = $('.alert');
 	if($alert.length) {
 		setTimeout(function() {
@@ -386,8 +390,8 @@ $(function() {
 		);		
 	}
 		
-	/*------*/
-	/* handle refresh cart*/	
+	------
+	 handle refresh cart	
 	$('button[name="refreshCart"]').click(function(){
 		var cartLineId = $(this).attr('value');
 		var countField = $('#count_' + cartLineId);
@@ -410,5 +414,5 @@ $(function() {
 				window.location.href = updateUrl;
 			}
 		}
-	});			
+	});*/			
 });

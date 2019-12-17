@@ -1,19 +1,37 @@
 package net.sdm.appbackend.dto;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+
+import javax.persistence.Id;
+
+@Entity
 public class Category {
 	
 	/*
 	 * Private fields
 	 * */
 	
-	
+	@Id
 	private int id;
 	private String name;
 	private String description;
+	
+	@Column(name="image_url")
 	private String imageURL;
-	private boolean active=true;
+	
+	@Column(name="is_active")
+	private char active='y';
 	
 	
+	
+	
+	@Override
+	public String toString() {
+		return "Category [id=" + id + ", name=" + name + ", description=" + description + ", imageURL=" + imageURL
+				+ ", active=" + active + "]";
+	}
 	public int getId() {
 		return id;
 	}
@@ -38,11 +56,11 @@ public class Category {
 	public void setImageURL(String imageURL) {
 		this.imageURL = imageURL;
 	}
-	public boolean isActive() {
-		return active;
+	public char isActive() {
+		return 'y';
 	}
 	public void setActive(boolean active) {
-		this.active = active;
+		this.active = 'y';
 	}
 
 }

@@ -3,13 +3,19 @@ package net.sdm.appbackend.daoimpl;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import net.sdm.appbackend.dao.CategoryDAO;
 import net.sdm.appbackend.dto.Category;
 @Repository("CategoryDAO")
 public class CategoryDAOImpl implements CategoryDAO {
 
+	@Autowired
+	private SessionFactory sessionfactory;
+	
 	private static List<Category> categories=new ArrayList<>();
 	
 	static{
@@ -39,6 +45,34 @@ public class CategoryDAOImpl implements CategoryDAO {
 	public List<Category> list() {
 		
 		return categories;
+	}
+
+	@Override
+	public Category getCategoryById(int id) {
+		for(Category category:categories)
+		{
+			if(category.getId()==id)
+			{
+				return category;	
+			}
+		}
+		return null;	
+	}
+
+	@Override
+	@Transactional
+	public boolean addCategory(Category category) {
+		try{
+			
+			sessionfactory.getCurrentSession().persist(category);
+			return true;
+		}
+		catch(Exception E)
+		{
+			E.printStackTrace();
+			return false;
+		}
+	
 	}
 
 }

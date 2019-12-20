@@ -43,11 +43,9 @@
 </dependency>
 
 <dependency>
-		<groupId>com.oracle</groupId>
-		<artifactId>ojdbc</artifactId>
-		<version>6</version>
-		<scope>system</scope>
-		<systemPath>d:/ojdbc6.jar</systemPath>
+	 <groupId>com.h2database</groupId>
+    <artifactId>h2</artifactId>
+    <version>1.4.200</version>	
 	</dependency>
 
     <dependency>

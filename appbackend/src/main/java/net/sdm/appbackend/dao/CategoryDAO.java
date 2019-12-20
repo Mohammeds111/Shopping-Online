@@ -6,9 +6,11 @@ import net.sdm.appbackend.dto.Category;
 
 public interface CategoryDAO {
 	
-	List<Category> list();
-
+	
+	
 	Category getCategoryById(int id);
-
-	boolean addCategory(Category category);
+	List<Category> list();
+    boolean addCategory(Category category);
+    boolean update(Category category);
+    boolean delete(Category category);
 }

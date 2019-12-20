@@ -3,7 +3,7 @@ package net.sdm.appbackend.dto;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
@@ -14,6 +14,7 @@ public class Category {
 	 * */
 	
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 	private String name;
 	private String description;
@@ -22,7 +23,7 @@ public class Category {
 	private String imageURL;
 	
 	@Column(name="is_active")
-	private char active='y';
+	private boolean active=true;
 	
 	
 	
@@ -56,11 +57,13 @@ public class Category {
 	public void setImageURL(String imageURL) {
 		this.imageURL = imageURL;
 	}
-	public char isActive() {
-		return 'y';
+	public boolean isActive() {
+		return active;
 	}
 	public void setActive(boolean active) {
-		this.active = 'y';
+		this.active = active;
 	}
+	
+	
 
 }

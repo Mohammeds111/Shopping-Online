@@ -49,8 +49,28 @@ $(function() {
 		
 		
 	}
+	/*var product=
+		[
+		 ["1","kjd","adf","122","33"],
+		 ["2","kjd","adf","124","33"]
+		 
+		 ]
+	
+	var $table = $('#productListTable');
+	if($table.length)
+			{
+		$table.DataTable({
+			data:product
+		});
+			}*/
+	
+	
+	
+	
+	
+	
 
-/*	// code for jquery dataTable
+	// code for jquery dataTable
 	var $table = $('#productListTable');
 
 	// execute the below code only where we have this table
@@ -70,19 +90,19 @@ $(function() {
 
 					lengthMenu : [ [ 3, 5, 10, -1 ],
 							[ '3 Records', '5 Records', '10 Records', 'ALL' ] ],
-					pageLength : 5,
+					pageLength :5,
 					ajax : {
 						url : jsonUrl,
 						dataSrc : ''
 					},
 					columns : [
 							{
-								data : 'code',
+								data : 'name',
 								bSortable : false,
 								mRender : function(data, type, row) {
 
 									return '<img src="' + window.contextRoot
-											+ '/resources/images/' + data
+								            + '/resources/images/' + data
 											+ '.jpg" class="dataTableImg"/>';
 
 								}
@@ -124,36 +144,40 @@ $(function() {
 											+ '/product" class="btn btn-primary"><span class="glyphicon glyphicon-eye-open"></span></a> &#160;';
 
 									
-									if(userRole !== 'ADMIN') {
+									/*if(userRole !== 'ADMIN') {*/
 										if (row.quantity < 1) {
 											str += '<a href="javascript:void(0)" class="btn btn-success disabled"><span class="glyphicon glyphicon-shopping-cart"></span></a>';
-										} else {
+										
+										} else { 
 	
 											str += '<a href="'
 													+ window.contextRoot
 													+ '/cart/add/'
 													+ data
 													+ '/product" class="btn btn-success"><span class="glyphicon glyphicon-shopping-cart"></span></a>';
+											
+										}
+										return str;	
 										}
 									}
+							/*
 									else {
 										str += '<a href="'
 											+ window.contextRoot
 											+ '/manage/'
 											+ data
 											+ '/product" class="btn btn-warning"><span class="glyphicon glyphicon-pencil"></span></a>';
-									}
+									}*/
 									
-									return str;
+									
 
-								}
-
-							} ]
+								//}}
+	               ]
 				});
 	}
 
 	
-	
+	/*
 	// list of all products for admin
 	var $productsTable = $('#productsTable');
 	

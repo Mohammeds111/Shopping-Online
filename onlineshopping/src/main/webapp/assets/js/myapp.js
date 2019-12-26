@@ -32,10 +32,10 @@ $(function() {
 	case 'All Products':
 		$('#listProducts').addClass('active');
 		break;
-	/*case 'Product Management':
-		$('#manageProduct').addClass('active');
+	case 'Manage Products':
+		$('#manageProducts').addClass('active');
 		break;
-	case 'Shopping Cart':
+		/*case 'Shopping Cart':
 		$('#userModel').addClass('active');
 		break;
 	case 'Shopping Cart':

@@ -29,7 +29,7 @@
                         <a href="${contextRoot}/show/all/products">View Products</a>
                     </li>
 					
-	                    <li id="manageProduct">
+	                    <li id="manageProducts">
 	                        <a href="${contextRoot}/manage/product">Manage Product</a>
 	                    </li>					
 					

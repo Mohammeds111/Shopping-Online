@@ -30,7 +30,7 @@
                     </li>
 					
 	                    <li id="manageProducts">
-	                        <a href="${contextRoot}/manage/product">Manage Product</a>
+	                        <a href="${contextRoot}/manage/products">Manage Product</a>
 	                    </li>					
 					
                 </ul>

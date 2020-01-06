@@ -18,7 +18,14 @@ $(function() {
 		});				
 	}
 	
-	
+	// for fading out the alert message after 3 seconds 
+		$alert = $('.alert');
+		if($alert.length) {
+			setTimeout(function() {
+		    	$alert.fadeOut('slow');
+			   }, 3000
+			);		
+		}
 	
 	// solving the active menu problem
 	switch (menu) {
@@ -90,7 +97,7 @@ $(function() {
 
 					lengthMenu : [ [ 3, 5, 10, -1 ],
 							[ '3 Records', '5 Records', '10 Records', 'ALL' ] ],
-					pageLength :5,
+					pageLength :7,
 					ajax : {
 						url : jsonUrl,
 						dataSrc : ''
@@ -405,14 +412,7 @@ $(function() {
 	
 	
 	------
-	 for fading out the alert message after 3 seconds 
-	$alert = $('.alert');
-	if($alert.length) {
-		setTimeout(function() {
-	    	$alert.fadeOut('slow');
-		   }, 3000
-		);		
-	}
+	
 		
 	------
 	 handle refresh cart	

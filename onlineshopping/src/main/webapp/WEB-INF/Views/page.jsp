@@ -24,7 +24,7 @@
 <title>Online Shopping - ${title}</title>
 
 <script>
-	window.menu = '${title}';
+	 window.menu = '${title}';
 	
 	window.contextRoot = '${contextRoot}'
 	

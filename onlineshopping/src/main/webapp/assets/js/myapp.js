@@ -19,7 +19,7 @@ $(function() {
 	}
 	
 	// for fading out the alert message after 3 seconds 
-		$alert = $('.alert');
+		 $alert = $('.alert');
 		if($alert.length) {
 			setTimeout(function() {
 		    	$alert.fadeOut('slow');
@@ -139,7 +139,7 @@ $(function() {
 								}
 							},
 							{
-								data : 'id',
+								 data : 'id',
 								bSortable : false,
 								mRender : function(data, type, row) {
 

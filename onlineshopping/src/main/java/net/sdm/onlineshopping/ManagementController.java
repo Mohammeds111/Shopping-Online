@@ -46,7 +46,7 @@ public class ManagementController {
 	@ModelAttribute("Categories")
 	public List<Category> getCategoryList()
 	{
-		return categoryDAO.list();
+		return categoryDAO.list() ;
 	}
 	
 	

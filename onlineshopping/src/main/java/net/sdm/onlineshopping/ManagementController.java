@@ -2,6 +2,8 @@ package net.sdm.onlineshopping;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -14,6 +16,7 @@ import net.sdm.appbackend.dao.CategoryDAO;
 import net.sdm.appbackend.dao.ProductDAO;
 import net.sdm.appbackend.dto.Category;
 import net.sdm.appbackend.dto.Product;
+import net.sdm.onlineshopping.util.FileUploadUtility;
 
 @Controller
 @RequestMapping("/manage")
@@ -51,10 +54,15 @@ public class ManagementController {
 	
 	
 	@RequestMapping(value="/products" ,method=RequestMethod.POST)
-	public String handleProductSubmission(@ModelAttribute("product") Product mproduct)
+	public String handleProductSubmission(@ModelAttribute("product") Product mproduct,HttpServletRequest request)
 	{
 	
 		productDAO.add(mproduct);
+		if(!mproduct.getFile().getOriginalFilename().equals(""))
+		{
+			FileUploadUtility.uploadFile(request,mproduct.getFile(),mproduct.getName());
+		}
+		
 		return "redirect:/manage/products?Operation=product"  ;
 	}
 	

@@ -25,13 +25,13 @@
 				</div>
 
 				<div class="panel-body">
-					<sof:form class="form-horizontal" modelAttribute="product" action="${contextRoot}/manage/products" method="POST">
+					<sof:form class="form-horizontal" modelAttribute="product" action="${contextRoot}/manage/products" method="POST" enctype="multipart/form-data">
 						<div class="form-group">
 							<label class="control-label col-md-4" for="name">Name</label>
 							<div class="col-md-8">
 								<sof:input type="text" path="name" id="name" class="form-control"
 									placeholder="Product Name" />
-								 
+							<em class="help-block">please enter Product</em>	 
 							</div>
 						</div>
 						
@@ -72,13 +72,13 @@
 						</div>
 
 
-						<%-- <div class="form-group">
+						 <div class="form-group">
 							<label class="control-label col-md-4">Upload a file</label>
 							<div class="col-md-8">
 								<sof:input type="file" path="file" class="form-control"/>
 								<sof:errors path="file" cssClass="help-block" element="em"/> 
 							</div>
-						</div> --%>
+						</div> 
 
 
 						<div class="form-group">

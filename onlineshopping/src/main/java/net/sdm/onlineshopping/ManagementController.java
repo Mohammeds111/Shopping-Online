@@ -55,7 +55,7 @@ public class ManagementController {
 	{
 	
 		productDAO.add(mproduct);
-		return "redirect:/manage/products?Operation=product";
+		return "redirect:/manage/products?Operation=product"  ;
 	}
 	
 	

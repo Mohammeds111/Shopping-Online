@@ -10,7 +10,7 @@ public class FileUploadUtility {
 public static final String ABS_PATH= "C:\\Online\\Shopping-Online\\onlineshopping\\src\\main\\webapp\\assets\\images\\";
 public static String REAL_PATH="";
 public static void uploadFile(HttpServletRequest request, MultipartFile file,
-		String name) {
+		String code) {
 	REAL_PATH=request.getSession().getServletContext().getRealPath("/assets/images/");
 	
 	if(!new File(ABS_PATH).exists())
@@ -24,8 +24,8 @@ public static void uploadFile(HttpServletRequest request, MultipartFile file,
 	}
 	
 	try{
-		file.transferTo(new File(ABS_PATH +name+ ".jpg"));
-		file.transferTo(new File(REAL_PATH +name+ ".jpg"));
+		file.transferTo(new File(ABS_PATH +code+ ".jpg"));
+		file.transferTo(new File(REAL_PATH +code+ ".jpg"));
 		
 	}
 	catch(Exception E)

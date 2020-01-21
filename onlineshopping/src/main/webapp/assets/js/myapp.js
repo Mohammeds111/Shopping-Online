@@ -184,7 +184,7 @@ $(function() {
 	}
 
 	
-	/*
+	
 	// list of all products for admin
 	var $productsTable = $('#productsTable');
 	
@@ -195,8 +195,8 @@ $(function() {
 		console.log(jsonUrl);
 		
 		$productsTable.DataTable({
-					lengthMenu : [ [ 10, 30, 50, -1 ], [ '10 Records', '30 Records', '50 Records', 'ALL' ] ],
-					pageLength : 30,
+					lengthMenu : [ [ 6, 8, 50, -1 ], [ '6 Records', '8 Records', '50 Records', 'ALL' ] ],
+					pageLength : 6,
 					ajax : {
 						url : jsonUrl,
 						dataSrc : ''
@@ -284,7 +284,7 @@ $(function() {
 						    	callback: function (confirmed) {
 							        if (confirmed) {
 							            $.ajax({							            	
-							            	type: 'GET',
+							            	type: 'POST',
 							            	url: window.contextRoot + '/manage/product/'+checkbox.prop('value')+'/activation',
 							        		timeout : 100000,
 							        		success : function(data) {
@@ -295,7 +295,7 @@ $(function() {
 							        			//display(e);
 							        		}						            	
 							            });
-							        }
+							        } 
 							        else {							        	
 							        	checkbox.prop('checked', !checked);
 							        }
@@ -308,7 +308,7 @@ $(function() {
 	}
 	
 	
-	
+	/*
 	
 	// jQuery Validation Code
 

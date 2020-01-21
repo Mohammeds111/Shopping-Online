@@ -158,7 +158,7 @@
 	    </div>
 	  </div>
 	</div>
-	
+ --%>	
 	<hr/>	
 	<h1>Available Products</h1>
 	<hr/>
@@ -205,5 +205,5 @@
 	
 	
 	</div>
- --%>
+
  </div>

@@ -42,7 +42,13 @@ public class ManagementController {
 		
 		if(operation!=null)
 		{
+			if(operation.equals("product")){
 			mv.addObject("message", "Product Successfully Added");
+			}
+			else
+			{
+				mv.addObject("message", "Category Successfully Added");	
+			}
 		}
 		
 		return mv;
@@ -100,6 +106,20 @@ public class ManagementController {
 		return (isActive)?
 				"You have succesfully deactivated the Product" + product.getId()
 		        : "You have succesfully activated the Product" + product.getId();
+	}
+	
+	@ModelAttribute("category")
+	public Category getCategory()
+	{
+		return new Category() ;
+	}
+	
+	@RequestMapping(value="/category", method=RequestMethod.POST)
+	public String handleCategorySubmission(@ModelAttribute Category category)
+	{
+		categoryDAO.addCategory(category);
+		return "redirect:/manage/products?Operation=category" ;
+		
 	}
 	
 

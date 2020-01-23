@@ -119,7 +119,7 @@
 
 	</div>
 
-	<%-- <!-- Modal -->
+ <!-- Modal -->
 	<div class="modal fade" id="myCategoryModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 	  <div class="modal-dialog" role="document">
 	    <div class="modal-content">
@@ -134,15 +134,15 @@
        			<div class="form-group">
 					<label class="control-label col-md-4">Name</label>
 					<div class="col-md-8 validate">
-						<sof:input type="text" path="name" class="form-control"
-							placeholder="Category Name" /> 
+						<sof:input type="text"  id="category_name" path="name" class="form-control"
+							 /> 
 					</div>
 				</div>
        			
        			<div class="form-group">				
 					<label class="control-label col-md-4">Description</label>
 					<div class="col-md-8 validate">
-						<sof:textarea path="description" class="form-control"
+						<sof:textarea id="category_description" path="description" class="form-control"
 							placeholder="Enter category description here!" /> 
 					</div>
 				</div>	        	        
@@ -158,7 +158,7 @@
 	    </div>
 	  </div>
 	</div>
- --%>	
+ 	
 	<hr/>	
 	<h1>Available Products</h1>
 	<hr/>

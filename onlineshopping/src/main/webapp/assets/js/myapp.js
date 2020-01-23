@@ -328,11 +328,12 @@ $(function() {
 
 	}	
 	
+	*/
 	
 	
 	// validating the product form element	
 	// fetch the form element
-	$categoryForm = $('#categoryForm');
+	var $categoryForm = $('#categoryForm');
 	
 	if($categoryForm.length) {
 		
@@ -341,6 +342,7 @@ $(function() {
 					name: {
 						required: true,
 						minlength: 3
+					
 					},
 					description: {
 						required: true,
@@ -359,7 +361,11 @@ $(function() {
 				},
 				errorElement : "em",
 				errorPlacement : function(error, element) {
-					errorPlacement(error, element);
+					// Add the 'help-block' class to the error element
+					error.addClass('help-block');
+					
+					// add the error label after the input element
+					error.insertAfter(element);
 				}				
 			}
 		
@@ -367,6 +373,7 @@ $(function() {
 		
 	}
 	
+	/*
 	validating the loginform
 	
 	// validating the product form element	

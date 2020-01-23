@@ -1,5 +1,7 @@
 package net.sdm.onlineshopping;
 
+import java.util.List;
+
 import net.sdm.appbackend.dao.CategoryDAO;
 import net.sdm.appbackend.dao.ProductDAO;
 import net.sdm.appbackend.dto.Category;
@@ -8,6 +10,7 @@ import net.sdm.onlineshopping.exception.ProductNotFoundException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -27,10 +30,17 @@ public class PageController {
 		ModelAndView mvc=new ModelAndView("page");
 		mvc.addObject("userClickHome", true);
 		mvc.addObject("title", "Home");
-		mvc.addObject("categories", categoryDAO.list());
+		//mvc.addObject("categories", categoryDAO.list());
 		
 		return mvc;
 	}
+	
+	@ModelAttribute("Categories")
+	public List<Category> getCategoryList()
+	{
+		return categoryDAO.list() ;
+	}
+	
 	@RequestMapping(value="/contact")
 	public ModelAndView about()
 	{
